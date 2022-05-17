@@ -12,7 +12,12 @@ namespace EShopper.DataAccess.Concrete.EfCore
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connection =>)
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-4K7KU26\SQLEXPRESS;Database=EShoppingDB;TrustConnetion;");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductCategory>()
+                .HasKey(c => new { c.CategoryId, c.ProductId });
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }

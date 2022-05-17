@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EShopper.Entities\EShopper.Entities.csproj" />
+    <ProjectReference Include="..\EShopping.DataAccess\EShopper.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

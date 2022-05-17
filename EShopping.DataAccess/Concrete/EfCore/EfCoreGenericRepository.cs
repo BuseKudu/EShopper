@@ -13,7 +13,7 @@ namespace EShopper.DataAccess.Concrete.EfCore
         where T : class
         where TContext : DbContext, new()
     {
-        public void Create(T entity)
+        public  void Create(T entity)
         {
             using(var context=new TContext())
             {
@@ -31,7 +31,7 @@ namespace EShopper.DataAccess.Concrete.EfCore
             }
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter=null)
         {
             using (var context = new TContext())
             {
@@ -41,7 +41,7 @@ namespace EShopper.DataAccess.Concrete.EfCore
             }
         }
 
-        public T GetById(int Id)
+        public T GetById(int id)
         {
             using (var context = new TContext())
             {
