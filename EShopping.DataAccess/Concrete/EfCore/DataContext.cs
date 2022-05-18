@@ -12,7 +12,7 @@ namespace EShopper.DataAccess.Concrete.EfCore
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-4K7KU26\SQLEXPRESS;Database=EShoppingDB;TrustConnetion;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-4K7KU26\SQLEXPRESS;Database=EShoppingDB;uid=buse;pwd=111111111111111");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
